@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f2e22; /* dark forest green */
+  color: #fff;
+}
+
+/* LOGIN SCREEN */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  backdrop-filter: blur(8px);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #1f5c43;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2e7a58;
+}
+
+#error {
+  color: #ff6b6b;
+  margin-top: 10px;
+}
+
+/* APP SCREEN */
+.app-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
