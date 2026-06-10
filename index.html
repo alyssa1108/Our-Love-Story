@@ -1,82 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scrapbook Login</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- LOGIN SCREEN -->
-  <div id="login-screen">
-    <div class="login-box">
-      <h2>Enter Password</h2>
-      <input type="password" id="password" placeholder="Password">
-      <button onclick="checkPassword()">Login</button>
-      <p id="error"></p>
+
+<!-- LOGIN PAGE -->
+<div id="login-page">
+
+    <div class="login-card">
+
+        <h1>Our Love Story</h1>
+
+        <p class="subtitle">
+            A scrapbook of us ❤️
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+        >
+
+        <button onclick="checkPassword()">
+            Open Book
+        </button>
+
+        <p id="error"></p>
+
     </div>
-  </div>
 
-  <!-- SCRAPBOOK (hidden until login) -->
-  <div id="scrapbook" style="display:none;">
-    <div class="page cover">
-      <h1>Our Scrapbook</h1>
-      <p>Together since 18 May 2024</p>
-      <p>Anniversary: 5 April 2026</p>
-      <div id="counter"></div>
-      <div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div>
+</div>
+
+<!-- SCRAPBOOK -->
+<div id="book-container">
+
+    <div class="book">
+
+        <!-- PAGE 1 -->
+        <div class="page active">
+            <div class="cover-page">
+                <h1>Our Love Story</h1>
+                <p>For Joash ❤️</p>
+            </div>
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="page">
+            <div class="chapter">
+                <h1>Chapter 1</h1>
+                <h2>The Beginning</h2>
+            </div>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic01.jpg.jpeg" alt="">
+                <p>Our Beginning ❤️</p>
+            </div>
+        </div>
+
+        <!-- PAGE 4 -->
+        <div class="page">
+            <div class="memory-page">
+                <h2>A Beautiful Start</h2>
+                <p>
+                    Write your memory here.
+                </p>
+            </div>
+        </div>
+
+        <!-- PAGE 5 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic02.jpg.jpeg" alt="">
+                <p>Favourite Memory</p>
+            </div>
+        </div>
+
+        <!-- PAGE 6 -->
+        <div class="page">
+            <div class="memory-page">
+                <h2>One Of My Favourite Days</h2>
+                <p>
+                    Write your memory here.
+                </p>
+            </div>
+        </div>
+
+        <!-- PAGE 7 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic03.jpg.jpeg" alt="">
+                <p>Just Us ❤️</p>
+            </div>
+        </div>
+
+        <!-- PAGE 8 -->
+        <div class="page">
+            <div class="memory-page">
+                <h2>A Special Memory</h2>
+                <p>
+                    Write your memory here.
+                </p>
+            </div>
+        </div>
+
+        <!-- PAGE 9 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic04.jpg.jpeg" alt="">
+                <p>Forever Grateful</p>
+            </div>
+        </div>
+
+        <!-- PAGE 10 -->
+        <div class="page">
+            <div class="chapter">
+                <h1>Chapter 2</h1>
+                <h2>Falling In Love</h2>
+            </div>
+        </div>
+
+        <!-- PAGE 11 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic05.jpg.jpeg">
+                <p>My Favourite Smile</p>
+            </div>
+        </div>
+
+        <!-- PAGE 12 -->
+        <div class="page memory-page">
+            <h2>A Memory To Keep Forever</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 13 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic06.jpg.jpeg">
+                <p>My Happy Place</p>
+            </div>
+        </div>
+
+        <!-- PAGE 14 -->
+        <div class="page memory-page">
+            <h2>Another Beautiful Day</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 15 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic07.jpg.jpeg">
+                <p>Always You</p>
+            </div>
+        </div>
+
+        <!-- PAGE 16 -->
+        <div class="page memory-page">
+            <h2>A Love Story</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 17 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic08.jpg.jpeg">
+                <p>Best Moments</p>
+            </div>
+        </div>
+
+        <!-- PAGE 18 -->
+        <div class="page">
+            <div class="chapter">
+                <h1>Chapter 3</h1>
+                <h2>Our Adventures</h2>
+            </div>
+        </div>
+
+        <!-- PAGE 19 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic09.jpg.jpeg">
+                <p>Adventure Time</p>
+            </div>
+        </div>
+
+        <!-- PAGE 20 -->
+        <div class="page memory-page">
+            <h2>A New Adventure</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 21 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic10.jpg.jpeg">
+                <p>My Person</p>
+            </div>
+        </div>
+
+        <!-- PAGE 22 -->
+        <div class="page memory-page">
+            <h2>Another Chapter</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 23 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic11.jpg.jpeg">
+                <p>Forever Mine</p>
+            </div>
+        </div>
+
+        <!-- PAGE 24 -->
+        <div class="page memory-page">
+            <h2>Our Journey</h2>
+            <p>Write your text here.</p>
+        </div>
+
+        <!-- PAGE 25 -->
+        <div class="page">
+            <div class="chapter">
+                <h1>Chapter 4</h1>
+                <h2>My Favourite Person</h2>
+            </div>
+        </div>
+
+        <!-- PAGE 26 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic12.jpg.jpeg">
+                <p>My Baby ❤️</p>
+            </div>
+        </div>
+
+        <!-- PAGE 27 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic13.jpg.jpeg">
+                <p>You Mean Everything</p>
+            </div>
+        </div>
+
+        <!-- PAGE 28 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic14.jpg.jpeg">
+                <p>Every Moment</p>
+            </div>
+        </div>
+
+        <!-- PAGE 29 -->
+        <div class="page">
+            <div class="polaroid">
+                <img src="pic15.jpg.jpeg">
+                <p>My Forever ❤️</p>
+            </div>
+        </div>
+
+        <!-- PAGE 30 -->
+        <div class="page">
+            <div class="letter-page">
+                <h1>To Be Continued...</h1>
+
+                <p>
+                    Thank you for every smile,
+                    every laugh,
+                    every hug,
+                    every kiss,
+                    and every memory.
+
+                    I love you more than words
+                    could ever explain.
+
+                    Forever yours ❤️
+                </p>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Polaroid photo pages -->
-    <div class="page"><div class="polaroid"><img src="pic01.jpg.jpeg"><p>Memory 1</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic02.jpg.jpeg"><p>Memory 2</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic03.jpg.jpeg"><p>Memory 3</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic04.jpg.jpeg"><p>Memory 4</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic05.jpg.jpeg"><p>Memory 5</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic06.jpg.jpeg"><p>Memory 6</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic07.jpg.jpeg"><p>Memory 7</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic08.jpg.jpeg"><p>Memory 8</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic09.jpg.jpeg"><p>Memory 9</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic10.jpg.jpeg"><p>Memory 10</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic11.jpg.jpeg"><p>Memory 11</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic12.jpg.jpeg"><p>Memory 12</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic13.jpg.jpeg"><p>Memory 13</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic14.jpg.jpeg"><p>Memory 14</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
-    <div class="page"><div class="polaroid"><img src="pic15.jpg.jpeg"><p>Memory 15</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="controls">
+        <button id="prevBtn">← Previous</button>
+        <button id="nextBtn">Next →</button>
+    </div>
 
-    <!-- Final Page -->
-    <div class="page"><h3>Forever & Always 💚</h3></div>
-  </div>
+</div>
 
-  <script>
-    // Password check
-    function checkPassword() {
-      const password = document.getElementById("password").value;
-      if (password === "JoashManicum") {
-        document.getElementById("login-screen").style.display = "none";
-        document.getElementById("scrapbook").style.display = "block";
+<script src="app.js"></script>
 
-        // Initialize scrapbook
-        $("#scrapbook").turn({
-          width: 800,
-          height: 600,
-          autoCenter: true,
-          gradients: true,
-          acceleration: true
-        });
-
-        // Counter
-        const startDate = new Date("2024-05-18");
-        const today = new Date();
-        const diffTime = Math.abs(today - startDate);
-        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-        document.getElementById("counter").innerText =
-          "Together for " + diffDays + " days 💕";
-      } else {
-        document.getElementById("error").innerText = "Incorrect password";
-      }
-    }
-  </script>
 </body>
 </html>
