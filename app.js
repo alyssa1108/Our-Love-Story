@@ -1,74 +1,36 @@
-const CORRECT_PASSWORD = "JoashManicum";
-
-const loginPage = document.getElementById("login-page");
-const bookContainer = document.getElementById("book-container");
-const passwordInput = document.getElementById("password");
-const error = document.getElementById("error");
+const correctPassword = "JoashManicum";
 
 function checkPassword(){
+const input = document.getElementById("password").value;
 
-    const enteredPassword = passwordInput.value.trim();
-
-    if(enteredPassword === CORRECT_PASSWORD){
-
-        loginPage.style.display = "none";
-        bookContainer.style.display = "flex";
-
-    }else{
-
-        error.textContent = "Incorrect Password ❤️";
-    }
+if(input === correctPassword){
+document.getElementById("login-page").style.display="none";
+document.getElementById("book-container").style.display="flex";
+}else{
+document.getElementById("error").innerText="Wrong password ❤️";
 }
-
-/* ENTER KEY */
-
-passwordInput.addEventListener("keypress", function(e){
-
-    if(e.key === "Enter"){
-
-        checkPassword();
-    }
-});
-
-/* FLIPBOOK */
+}
 
 const pages = document.querySelectorAll(".page");
+let current = 0;
 
-const nextBtn = document.getElementById("nextBtn");
-const prevBtn = document.getElementById("prevBtn");
-
-let currentPage = 0;
-
-function showPage(index){
-
-    pages.forEach(page=>{
-
-        page.classList.remove("active");
-    });
-
-    pages[index].classList.add("active");
+function showPage(i){
+pages.forEach(p=>p.classList.remove("active"));
+pages[i].classList.add("active");
 }
 
-showPage(currentPage);
+document.getElementById("nextBtn").onclick=()=>{
+if(current < pages.length-1){
+current++;
+showPage(current);
+}
+};
 
-/* NEXT */
+document.getElementById("prevBtn").onclick=()=>{
+if(current > 0){
+current--;
+showPage(current);
+}
+};
 
-nextBtn.addEventListener("click",()=>{
-
-    if(currentPage < pages.length - 1){
-
-        currentPage++;
-        showPage(currentPage);
-    }
-});
-
-/* PREVIOUS */
-
-prevBtn.addEventListener("click",()=>{
-
-    if(currentPage > 0){
-
-        currentPage--;
-        showPage(currentPage);
-    }
-});
+showPage(0);
