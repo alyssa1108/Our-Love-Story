@@ -1,33 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Love Story</title>
+<div class="app-container hidden" id="appPage">
 
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="manifest.json"/>
-</head>
-
-<body>
-
-  <div class="login-container" id="loginPage">
-    <div class="card">
+  <!-- COVER PAGE -->
+  <div class="page" id="cover">
+    <div class="scrapbook-cover">
       <h1>OUR LOVE STORY</h1>
-      <p>Enter password to open our book 💚</p>
+      <p>A scrapbook of us 💚</p>
 
-      <input type="password" id="passwordInput" placeholder="Password"/>
-      <button onclick="checkPassword()">Open</button>
-
-      <p id="error"></p>
+      <button onclick="showPage('page1')">
+        Open Book
+      </button>
     </div>
   </div>
 
-  <div class="app-container hidden" id="appPage">
-    <h1>💚 Welcome to Our Love Story</h1>
-    <p>Your scrapbook will open here in Stage 2 📖</p>
+  <!-- PAGE 1 -->
+  <div class="page hidden" id="page1">
+    <h2>The Beginning 📅</h2>
+
+    <div class="polaroid">
+      <div class="photo-box">Photo 1</div>
+      <p>When we first met 💚</p>
+    </div>
+
+    <button onclick="showPage('page2')">Next ➝</button>
   </div>
 
-  <script src="app.js"></script>
-</body>
-</html>
+  <!-- PAGE 2 -->
+  <div class="page hidden" id="page2">
+    <h2>Us Becoming Us 💚</h2>
+
+    <div class="polaroid">
+      <div class="photo-box">Photo 2</div>
+      <p>Our early memories</p>
+    </div>
+
+    <button onclick="showPage('page3')">Next ➝</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page hidden" id="page3">
+    <h2>Special Moments ✨</h2>
+
+    <div class="polaroid">
+      <div class="photo-box">Photo 3</div>
+      <p>One of my favourite days with you</p>
+    </div>
+
+    <button onclick="showPage('final')">Next ➝</button>
+  </div>
+
+  <!-- FINAL PAGE -->
+  <div class="page hidden" id="final">
+    <h2>My Love Letter 💌</h2>
+
+    <div class="letter">
+      You are my favourite chapter in this story.
+      Every page is better with you in it. 💚
+    </div>
+  </div>
+
+</div>
