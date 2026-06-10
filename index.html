@@ -15,3 +15,61 @@
   <script src="login.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Scrapbook</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+</head>
+<body>
+  <div id="scrapbook">
+    <div class="page cover">
+      <h1>Our Scrapbook</h1>
+      <p>Together since 18 May 2024</p>
+      <p>Anniversary: 5 April 2026</p>
+      <div id="counter"></div>
+    </div>
+
+    <!-- Photos -->
+    <div class="page"><img src="pic01.jpg" alt="Memory 1"><p>Caption here</p></div>
+    <div class="page"><img src="pic02.jpg" alt="Memory 2"><p>Caption here</p></div>
+    <div class="page"><img src="pic03.jpg" alt="Memory 3"><p>Caption here</p></div>
+    <div class="page"><img src="pic04.jpg" alt="Memory 4"><p>Caption here</p></div>
+    <div class="page"><img src="pic05.jpg" alt="Memory 5"><p>Caption here</p></div>
+    <div class="page"><img src="pic06.jpg" alt="Memory 6"><p>Caption here</p></div>
+    <div class="page"><img src="pic07.jpg" alt="Memory 7"><p>Caption here</p></div>
+    <div class="page"><img src="pic08.jpg" alt="Memory 8"><p>Caption here</p></div>
+    <div class="page"><img src="pic09.jpg" alt="Memory 9"><p>Caption here</p></div>
+    <div class="page"><img src="pic10.jpg" alt="Memory 10"><p>Caption here</p></div>
+    <div class="page"><img src="pic11.jpg" alt="Memory 11"><p>Caption here</p></div>
+    <div class="page"><img src="pic12.jpg" alt="Memory 12"><p>Caption here</p></div>
+    <div class="page"><img src="pic13.jpg" alt="Memory 13"><p>Caption here</p></div>
+    <div class="page"><img src="pic14.jpg" alt="Memory 14"><p>Caption here</p></div>
+    <div class="page"><img src="pic15.jpg" alt="Memory 15"><p>Caption here</p></div>
+
+    <!-- Final Page -->
+    <div class="page"><h3>Forever & Always 💚</h3></div>
+  </div>
+
+  <script>
+    $("#scrapbook").turn({
+      width: 800,
+      height: 600,
+      autoCenter: true
+    });
+
+    function updateCounter() {
+      const startDate = new Date("2024-05-18");
+      const today = new Date();
+      const diffTime = Math.abs(today - startDate);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("counter").innerText =
+        "Together for " + diffDays + " days 💕";
+    }
+    updateCounter();
+  </script>
+</body>
+</html>
