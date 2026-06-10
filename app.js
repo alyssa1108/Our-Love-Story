@@ -1,28 +1,74 @@
-const PASSWORD = "JoashManicum";
+const CORRECT_PASSWORD = "JoashManicum";
 
-function checkPassword() {
-  const input = document.getElementById("passwordInput").value;
-  const error = document.getElementById("error");
+const loginPage = document.getElementById("login-page");
+const bookContainer = document.getElementById("book-container");
+const passwordInput = document.getElementById("password");
+const error = document.getElementById("error");
 
-  if (input === PASSWORD) {
-    document.getElementById("loginPage").classList.add("hidden");
-    document.getElementById("appPage").classList.remove("hidden");
+function checkPassword(){
 
-    showPage("cover");
-  } else {
-    error.textContent = "Not quite… try again ❤️";
-  }
+    const enteredPassword = passwordInput.value.trim();
+
+    if(enteredPassword === CORRECT_PASSWORD){
+
+        loginPage.style.display = "none";
+        bookContainer.style.display = "flex";
+
+    }else{
+
+        error.textContent = "Incorrect Password ❤️";
+    }
 }
 
-function showPage(page) {
-  const pages = document.querySelectorAll(".page");
-  pages.forEach(p => p.classList.add("hidden"));
-  document.getElementById(page).classList.remove("hidden");
+/* ENTER KEY */
+
+passwordInput.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        checkPassword();
+    }
+});
+
+/* FLIPBOOK */
+
+const pages = document.querySelectorAll(".page");
+
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let currentPage = 0;
+
+function showPage(index){
+
+    pages.forEach(page=>{
+
+        page.classList.remove("active");
+    });
+
+    pages[index].classList.add("active");
 }
 
-/* PWA */
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js');
-  });
-}
+showPage(currentPage);
+
+/* NEXT */
+
+nextBtn.addEventListener("click",()=>{
+
+    if(currentPage < pages.length - 1){
+
+        currentPage++;
+        showPage(currentPage);
+    }
+});
+
+/* PREVIOUS */
+
+prevBtn.addEventListener("click",()=>{
+
+    if(currentPage > 0){
+
+        currentPage--;
+        showPage(currentPage);
+    }
+});
