@@ -25,24 +25,25 @@
       <p>Together since 18 May 2024</p>
       <p>Anniversary: 5 April 2026</p>
       <div id="counter"></div>
+      <div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div>
     </div>
 
-    <!-- Photos -->
-    <div class="page"><img src="pic01.jpg.jpeg" alt="Memory 1"><p>Caption here</p></div>
-    <div class="page"><img src="pic02.jpg.jpeg" alt="Memory 2"><p>Caption here</p></div>
-    <div class="page"><img src="pic03.jpg.jpeg" alt="Memory 3"><p>Caption here</p></div>
-    <div class="page"><img src="pic04.jpg.jpeg" alt="Memory 4"><p>Caption here</p></div>
-    <div class="page"><img src="pic05.jpg.jpeg" alt="Memory 5"><p>Caption here</p></div>
-    <div class="page"><img src="pic06.jpg.jpeg" alt="Memory 6"><p>Caption here</p></div>
-    <div class="page"><img src="pic07.jpg.jpeg" alt="Memory 7"><p>Caption here</p></div>
-    <div class="page"><img src="pic08.jpg.jpeg" alt="Memory 8"><p>Caption here</p></div>
-    <div class="page"><img src="pic09.jpg.jpeg" alt="Memory 9"><p>Caption here</p></div>
-    <div class="page"><img src="pic10.jpg.jpeg" alt="Memory 10"><p>Caption here</p></div>
-    <div class="page"><img src="pic11.jpg.jpeg" alt="Memory 11"><p>Caption here</p></div>
-    <div class="page"><img src="pic12.jpg.jpeg" alt="Memory 12"><p>Caption here</p></div>
-    <div class="page"><img src="pic13.jpg.jpeg" alt="Memory 13"><p>Caption here</p></div>
-    <div class="page"><img src="pic14.jpg.jpeg" alt="Memory 14"><p>Caption here</p></div>
-    <div class="page"><img src="pic15.jpg.jpeg" alt="Memory 15"><p>Caption here</p></div>
+    <!-- Polaroid photo pages -->
+    <div class="page"><div class="polaroid"><img src="pic01.jpg.jpeg"><p>Memory 1</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic02.jpg.jpeg"><p>Memory 2</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic03.jpg.jpeg"><p>Memory 3</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic04.jpg.jpeg"><p>Memory 4</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic05.jpg.jpeg"><p>Memory 5</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic06.jpg.jpeg"><p>Memory 6</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic07.jpg.jpeg"><p>Memory 7</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic08.jpg.jpeg"><p>Memory 8</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic09.jpg.jpeg"><p>Memory 9</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic10.jpg.jpeg"><p>Memory 10</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic11.jpg.jpeg"><p>Memory 11</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic12.jpg.jpeg"><p>Memory 12</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic13.jpg.jpeg"><p>Memory 13</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic14.jpg.jpeg"><p>Memory 14</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
+    <div class="page"><div class="polaroid"><img src="pic15.jpg.jpeg"><p>Memory 15</p></div><div class="next-box" onclick="$('#scrapbook').turn('next')">Next ➡</div></div>
 
     <!-- Final Page -->
     <div class="page"><h3>Forever & Always 💚</h3></div>
@@ -60,7 +61,9 @@
         $("#scrapbook").turn({
           width: 800,
           height: 600,
-          autoCenter: true
+          autoCenter: true,
+          gradients: true,
+          acceleration: true
         });
 
         // Counter
@@ -77,4 +80,3 @@
   </script>
 </body>
 </html>
-
