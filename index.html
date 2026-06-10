@@ -1,90 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Love Story</title>
-
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f2e22">
+  <meta charset="UTF-8">
+  <title>Our Scrapbook</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 </head>
-
 <body>
-
-<!-- LOGIN -->
-<div class="login-container" id="loginPage">
-  <div class="card">
-    <h1>OUR LOVE STORY</h1>
-    <p>Enter password to open our book 💚</p>
-
-    <input type="password" id="passwordInput" placeholder="Password"/>
-    <button onclick="checkPassword()">Open</button>
-
-    <p id="error"></p>
-  </div>
-</div>
-
-<!-- APP -->
-<div class="app-container hidden" id="appPage">
-
-  <!-- COVER -->
-  <div class="page" id="cover">
-    <div class="scrapbook-cover">
-      <h1>OUR LOVE STORY</h1>
-      <p>A scrapbook of us 💚</p>
-      <button onclick="showPage('page1')">Open Book</button>
-    </div>
-  </div>
-
-  <!-- PAGE 1 -->
-  <div class="page hidden" id="page1">
-    <h2>The Start of US 📅</h2>
-
-    <div class="polaroid">
-      <div class="photo-box">Photo 1</div>
-      <p>When we first met in Church 💚</p>
+  <div id="scrapbook">
+    <!-- Cover Page -->
+    <div class="page cover">
+      <h1>Our Scrapbook</h1>
+      <p>Together since 18 May 2024</p>
+      <p>Anniversary: 5 April 2026</p>
+      <div id="counter"></div>
     </div>
 
-    <button onclick="showPage('page2')">Next ➝</button>
-  </div>
-
-  <!-- PAGE 2 -->
-  <div class="page hidden" id="page2">
-    <h2>Us Becoming Us 💚</h2>
-
-    <div class="polaroid">
-      <div class="photo-box">Photo 2</div>
-      <p>Our early memories</p>
+    <!-- Chapter Divider Example -->
+    <div class="page chapter">
+      <h2>Chapter 1: Beginnings</h2>
     </div>
 
-    <button onclick="showPage('page3')">Next ➝</button>
-  </div>
+    <!-- Photo Pages -->
+    <div class="page"><img src="images/pic01.jpg" alt="Memory 1"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic02.jpg" alt="Memory 2"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic03.jpg" alt="Memory 3"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic04.jpg" alt="Memory 4"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic05.jpg" alt="Memory 5"><p>Caption here</p></div>
 
-  <!-- PAGE 3 -->
-  <div class="page hidden" id="page3">
-    <h2>A Special Memory ✨</h2>
-
-    <div class="polaroid">
-      <div class="photo-box">Photo 3</div>
-      <p>One of my favourite memories</p>
+    <!-- Chapter Divider -->
+    <div class="page chapter">
+      <h2>Chapter 2: Adventures</h2>
     </div>
 
-    <button onclick="showPage('final')">Next ➝</button>
-  </div>
+    <div class="page"><img src="images/pic06.jpg" alt="Memory 6"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic07.jpg" alt="Memory 7"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic08.jpg" alt="Memory 8"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic09.jpg" alt="Memory 9"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic10.jpg" alt="Memory 10"><p>Caption here</p></div>
 
-  <!-- FINAL -->
-  <div class="page hidden" id="final">
-    <h2>Happy 24th Birthday my baby 💌</h2>
-
-    <div class="letter">
-      You are my favourite chapter in this story.  
-      Every page is better with you in it. 💚  
+    <!-- Chapter Divider -->
+    <div class="page chapter">
+      <h2>Chapter 3: Milestones</h2>
     </div>
+
+    <div class="page"><img src="images/pic11.jpg" alt="Memory 11"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic12.jpg" alt="Memory 12"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic13.jpg" alt="Memory 13"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic14.jpg" alt="Memory 14"><p>Caption here</p></div>
+    <div class="page"><img src="images/pic15.jpg" alt="Memory 15"><p>Caption here</p></div>
+
+    <!-- Extra Pages to reach 30 -->
+    <div class="page"><h3>Notes</h3><p>Write your thoughts here.</p></div>
+    <div class="page"><h3>Quotes</h3><p>Add favorite quotes here.</p></div>
+    <div class="page"><h3>Future Plans</h3><p>Dreams and goals together.</p></div>
+    <div class="page"><h3>Special Dates</h3><p>Important milestones.</p></div>
+    <div class="page"><h3>Final Page</h3><p>Forever & Always 💚</p></div>
   </div>
 
-</div>
+  <script>
+    // Initialize Flipbook
+    $("#scrapbook").turn({
+      width: 800,
+      height: 600,
+      autoCenter: true
+    });
 
-<script src="app.js"></script>
+    // Anniversary Counter
+    function updateCounter() {
+      const startDate = new Date("2024-05-18");
+      const today = new Date();
+      const diffTime = Math.abs(today - startDate);
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById("counter").innerText =
+        "Together for " + diffDays + " days 💕";
+    }
+    updateCounter();
+  </script>
 </body>
 </html>
