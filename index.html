@@ -1,1 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Love Story</title>
 
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="login-page">
+    <div class="login-card">
+        <h1>Our Love Story</h1>
+        <p class="subtitle">A scrapbook of us ❤️</p>
+
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Open Book</button>
+
+        <p id="error"></p>
+    </div>
+</div>
+
+<!-- BOOK -->
+<div id="book-container">
+
+    <div class="book">
+
+        <!-- PAGE 1 -->
+        <div class="page active cover">
+            <h1>Our Love Story</h1>
+            <p>For Joash ❤️</p>
+        </div>
+
+        <!-- MEMORY 1 -->
+        <div class="page memory-page">
+            <h2>Memory One</h2>
+            <p contenteditable="true">Write your memory here...</p>
+        </div>
+
+        <!-- PIC 1 -->
+        <div class="page polaroid">
+            <img src="pic01.jpg.jpeg">
+            <p>Us ❤️</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic02.jpg.jpeg">
+            <p>My Favourite Moment</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic03.jpg.jpeg">
+            <p>Forever</p>
+        </div>
+
+        <!-- MEMORY 2 -->
+        <div class="page memory-page">
+            <h2>Memory Two</h2>
+            <p contenteditable="true">Write your memory here...</p>
+        </div>
+
+        <!-- PIC 2 -->
+        <div class="page polaroid">
+            <img src="pic04.jpg.jpeg">
+            <p>Love this</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic05.jpg.jpeg">
+            <p>Always you</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic06.jpg.jpeg">
+            <p>Beautiful day</p>
+        </div>
+
+        <!-- MEMORY 3 -->
+        <div class="page memory-page">
+            <h2>Memory Three</h2>
+            <p contenteditable="true">Write your memory here...</p>
+        </div>
+
+        <!-- PIC 3 -->
+        <div class="page polaroid">
+            <img src="pic07.jpg.jpeg">
+            <p>My person</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic08.jpg.jpeg">
+            <p>Us again</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic09.jpg.jpeg">
+            <p>Perfect</p>
+        </div>
+
+        <!-- MEMORY 4 -->
+        <div class="page memory-page">
+            <h2>Memory Four</h2>
+            <p contenteditable="true">Write your memory here...</p>
+        </div>
+
+        <!-- PIC 4 -->
+        <div class="page polaroid">
+            <img src="pic10.jpg.jpeg">
+            <p>Forever us</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic11.jpg.jpeg">
+            <p>Love you</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic12.jpg.jpeg">
+            <p>My heart</p>
+        </div>
+
+        <!-- MEMORY 5 -->
+        <div class="page memory-page">
+            <h2>Memory Five</h2>
+            <p contenteditable="true">Write your memory here...</p>
+        </div>
+
+        <!-- PIC 5 -->
+        <div class="page polaroid">
+            <img src="pic13.jpg.jpeg">
+            <p>You & Me</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic14.jpg.jpeg">
+            <p>Forever</p>
+        </div>
+
+        <div class="page polaroid">
+            <img src="pic15.jpg.jpeg">
+            <p>My everything</p>
+        </div>
+
+        <!-- FINAL -->
+        <div class="page letter">
+            <h2>To Be Continued...</h2>
+            <p>Our story will never end ❤️</p>
+        </div>
+
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn">← Previous</button>
+        <button id="nextBtn">Next →</button>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
