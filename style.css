@@ -1,11 +1,11 @@
-/* LOGIN SCREEN */
+/* LOGIN COVER PAGE */
 #login-screen {
   margin: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: forestgreen;
+  background: forestgreen; /* full cover page */
   font-family: Arial, sans-serif;
 }
 
@@ -65,16 +65,40 @@ body {
   background: #fff;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
 
-.page img {
-  max-width: 100%;
-  height: auto;
-  border: 5px solid #ccc;
-  margin-bottom: 10px;
+/* Polaroid style */
+.polaroid {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  display: inline-block;
+  margin: 20px auto;
 }
 
-.cover {
-  background: #d9c6b0;
-  text-align: center;
+.polaroid img {
+  width: 90%;
+  border-bottom: 20px solid white; /* polaroid bottom space */
+}
+
+.polaroid p {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Next box */
+.next-box {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: forestgreen;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-box:hover {
+  background: darkgreen;
 }
