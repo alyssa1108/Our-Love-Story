@@ -14,10 +14,15 @@ function checkPassword() {
   }
 }
 
-// PAGE SYSTEM
 function showPage(page) {
   const pages = document.querySelectorAll(".page");
   pages.forEach(p => p.classList.add("hidden"));
-
   document.getElementById(page).classList.remove("hidden");
+}
+
+/* PWA */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js');
+  });
 }
