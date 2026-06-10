@@ -2,30 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="login.css">
-</head>
-<body>
-  <div class="login-box">
-    <h2>Enter Password</h2>
-    <input type="password" id="password" placeholder="Password">
-    <button onclick="checkPassword()">Login</button>
-    <p id="error"></p>
-  </div>
-  <script src="login.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Our Scrapbook</title>
+  <title>Scrapbook Login</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
 </head>
 <body>
-  <div id="scrapbook">
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div class="login-box">
+      <h2>Enter Password</h2>
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="checkPassword()">Login</button>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <!-- SCRAPBOOK (hidden until login) -->
+  <div id="scrapbook" style="display:none;">
     <div class="page cover">
       <h1>Our Scrapbook</h1>
       <p>Together since 18 May 2024</p>
@@ -55,21 +49,32 @@
   </div>
 
   <script>
-    $("#scrapbook").turn({
-      width: 800,
-      height: 600,
-      autoCenter: true
-    });
+    // Password check
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "JoashManicum") {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("scrapbook").style.display = "block";
 
-    function updateCounter() {
-      const startDate = new Date("2024-05-18");
-      const today = new Date();
-      const diffTime = Math.abs(today - startDate);
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      document.getElementById("counter").innerText =
-        "Together for " + diffDays + " days 💕";
+        // Initialize scrapbook
+        $("#scrapbook").turn({
+          width: 800,
+          height: 600,
+          autoCenter: true
+        });
+
+        // Counter
+        const startDate = new Date("2024-05-18");
+        const today = new Date();
+        const diffTime = Math.abs(today - startDate);
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById("counter").innerText =
+          "Together for " + diffDays + " days 💕";
+      } else {
+        document.getElementById("error").innerText = "Incorrect password";
+      }
     }
-    updateCounter();
   </script>
 </body>
 </html>
+
