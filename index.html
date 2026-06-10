@@ -2,81 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Our Scrapbook</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
 </head>
 <body>
-  <div id="scrapbook">
-    <!-- Cover Page -->
-    <div class="page cover">
-      <h1>Our Scrapbook</h1>
-      <p>Together since 18 May 2024</p>
-      <p>Anniversary: 5 April 2026</p>
-      <div id="counter"></div>
-    </div>
-
-    <!-- Chapter Divider Example -->
-    <div class="page chapter">
-      <h2>Chapter 1: Beginnings</h2>
-    </div>
-
-    <!-- Photo Pages -->
-    <div class="page"><img src="images/pic01.jpg" alt="Memory 1"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic02.jpg" alt="Memory 2"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic03.jpg" alt="Memory 3"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic04.jpg" alt="Memory 4"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic05.jpg" alt="Memory 5"><p>Caption here</p></div>
-
-    <!-- Chapter Divider -->
-    <div class="page chapter">
-      <h2>Chapter 2: Adventures</h2>
-    </div>
-
-    <div class="page"><img src="images/pic06.jpg" alt="Memory 6"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic07.jpg" alt="Memory 7"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic08.jpg" alt="Memory 8"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic09.jpg" alt="Memory 9"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic10.jpg" alt="Memory 10"><p>Caption here</p></div>
-
-    <!-- Chapter Divider -->
-    <div class="page chapter">
-      <h2>Chapter 3: Milestones</h2>
-    </div>
-
-    <div class="page"><img src="images/pic11.jpg" alt="Memory 11"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic12.jpg" alt="Memory 12"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic13.jpg" alt="Memory 13"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic14.jpg" alt="Memory 14"><p>Caption here</p></div>
-    <div class="page"><img src="images/pic15.jpg" alt="Memory 15"><p>Caption here</p></div>
-
-    <!-- Extra Pages to reach 30 -->
-    <div class="page"><h3>Notes</h3><p>Write your thoughts here.</p></div>
-    <div class="page"><h3>Quotes</h3><p>Add favorite quotes here.</p></div>
-    <div class="page"><h3>Future Plans</h3><p>Dreams and goals together.</p></div>
-    <div class="page"><h3>Special Dates</h3><p>Important milestones.</p></div>
-    <div class="page"><h3>Final Page</h3><p>Forever & Always 💚</p></div>
+  <div class="login-box">
+    <h2>Enter Password</h2>
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkPassword()">Login</button>
+    <p id="error"></p>
   </div>
-
-  <script>
-    // Initialize Flipbook
-    $("#scrapbook").turn({
-      width: 800,
-      height: 600,
-      autoCenter: true
-    });
-
-    // Anniversary Counter
-    function updateCounter() {
-      const startDate = new Date("2024-05-18");
-      const today = new Date();
-      const diffTime = Math.abs(today - startDate);
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      document.getElementById("counter").innerText =
-        "Together for " + diffDays + " days 💕";
-    }
-    updateCounter();
-  </script>
+  <script src="login.js"></script>
 </body>
 </html>
