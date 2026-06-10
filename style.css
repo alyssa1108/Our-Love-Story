@@ -1,4 +1,5 @@
-body {
+/* LOGIN SCREEN */
+#login-screen {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -46,6 +47,8 @@ body {
   color: red;
   margin-top: 10px;
 }
+
+/* SCRAPBOOK */
 body {
   background: #fdf6f0;
   font-family: 'Georgia', serif;
