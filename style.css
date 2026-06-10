@@ -1,102 +1,36 @@
+/* style.css */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #0f2e22;
-  color: white;
-}
-
-/* LOGIN */
-.login-container {
-  height: 100vh;
+  background: #fdf6f0;
+  font-family: 'Georgia', serif;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.card {
-  background: rgba(255,255,255,0.08);
-  padding: 35px;
-  border-radius: 18px;
-  text-align: center;
-  width: 320px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+#scrapbook {
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-input {
-  width: 100%;
-  padding: 12px;
-  margin-top: 12px;
-  border: none;
-  border-radius: 10px;
-}
-
-button {
-  margin-top: 12px;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  background: #1f5c43;
-  color: white;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #2e7a58;
-}
-
-#error {
-  color: #ff6b6b;
-  margin-top: 10px;
-}
-
-/* APP */
-.app-container {
-  min-height: 100vh;
-  background: linear-gradient(#0f2e22, #0b1f18);
-  padding: 20px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* SCRAPBOOK */
 .page {
-  text-align: center;
+  background: #fff;
   padding: 20px;
+  text-align: center;
 }
 
-.scrapbook-cover {
-  background: rgba(255,255,255,0.08);
-  padding: 40px;
-  border-radius: 20px;
-}
-
-.polaroid {
-  background: #f5f5f5;
-  color: black;
-  width: 200px;
-  margin: 20px auto;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  transform: rotate(-2deg);
-}
-
-.photo-box {
-  height: 150px;
-  background: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.page img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #ccc;
   margin-bottom: 10px;
 }
 
-.letter {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 15px;
-  line-height: 1.6;
+.page.chapter {
+  background: #f0e6d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover {
+  background: #d9c6b0;
 }
