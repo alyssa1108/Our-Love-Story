@@ -1,14 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Love Story</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f2e22">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="login-container" id="loginPage">
+  <div class="card">
+    <h1>OUR LOVE STORY</h1>
+    <p>Enter password to open our book 💚</p>
+
+    <input type="password" id="passwordInput" placeholder="Password"/>
+    <button onclick="checkPassword()">Open</button>
+
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- APP -->
 <div class="app-container hidden" id="appPage">
 
-  <!-- COVER PAGE -->
+  <!-- COVER -->
   <div class="page" id="cover">
     <div class="scrapbook-cover">
       <h1>OUR LOVE STORY</h1>
       <p>A scrapbook of us 💚</p>
-
-      <button onclick="showPage('page1')">
-        Open Book
-      </button>
+      <button onclick="showPage('page1')">Open Book</button>
     </div>
   </div>
 
@@ -18,7 +43,7 @@
 
     <div class="polaroid">
       <div class="photo-box">Photo 1</div>
-      <p>When we first met 💚</p>
+      <p>How we first met 💚</p>
     </div>
 
     <button onclick="showPage('page2')">Next ➝</button>
@@ -42,20 +67,24 @@
 
     <div class="polaroid">
       <div class="photo-box">Photo 3</div>
-      <p>One of my favourite days with you</p>
+      <p>One of my favourite memories</p>
     </div>
 
     <button onclick="showPage('final')">Next ➝</button>
   </div>
 
-  <!-- FINAL PAGE -->
+  <!-- FINAL -->
   <div class="page hidden" id="final">
     <h2>My Love Letter 💌</h2>
 
     <div class="letter">
-      You are my favourite chapter in this story.
-      Every page is better with you in it. 💚
+      You are my favourite chapter in this story.  
+      Every page is better with you in it. 💚  
     </div>
   </div>
 
 </div>
+
+<script src="app.js"></script>
+</body>
+</html>
